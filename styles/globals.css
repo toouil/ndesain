@@ -1,0 +1,136 @@
+@font-face {
+  font-family: ClashDisplay;
+  src: url(../assets/fonts/ClashDisplay-Variable.ttf);
+}
+
+::selection {
+  background: #95f017;
+  color: #13131e !important;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: ClashDisplay;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+main#HOME {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Card */
+
+.CARD_UI {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  text-decoration: none;
+  box-shadow: 0px 0px 20px #0000002e;
+  overflow: hidden;
+  background: linear-gradient(to top, #0d0f13, transparent);
+  padding: 15px;
+}
+
+.CARD_UI::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 0.3s ease;
+}
+
+.CARD_UI.CARD_UI:hover::before {
+  transform: scale(1.2) translate(-5%, -5%);
+  filter: grayscale(0);
+}
+
+.CARD_UI .CARD_UI_INFO h1 {
+  color: #fff;
+  font-size: calc(25px + 0.5vw);
+  font-weight: 500;
+}
+
+.CARD_UI .CARD_UI_INFO p {
+  color: #9f9ea2;
+  font-size: calc(10px + 0.4vw);
+  font-weight: 500;
+}
+
+.CARD_UI .CARD_UI_LINK {
+  align-self: flex-end;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: #fff 1px solid;
+  color: #fff;
+  background: none;
+
+  display: grid;
+  place-content: center;
+  transition: 0.3s;
+}
+
+.CARD_UI:hover .CARD_UI_LINK {
+  background: #95f017;
+  color: #13131e;
+  border: #95f017 1px solid;
+}
+
+.CARD_UI[data-type="event"] {
+  padding: 70% 25px 25px;
+  flex-direction: column;
+}
+.CARD_UI[data-type="speaker"] {
+  align-items: flex-end;
+  padding: 15px;
+}
+.CARD_UI[data-type="speaker"]::before {
+  filter: grayscale(1);
+}
+
+/* Slider */
+
+.SLIDER {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.SLIDER .SLIDES {
+  display: flex;
+}
+
+.SLIDER .SLIDES .SLIDE {
+  --space: 10px;
+  display: flex;
+  gap: var(--space);
+  padding: calc(var(--space) / 2);
+  animation: 20s slide infinite linear;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(100% * var(--direction)));
+  }
+}

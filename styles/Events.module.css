@@ -1,0 +1,62 @@
+.eventsContainer {
+    padding: 0 15px;
+}
+
+.top {
+    padding: 80px 0;
+}
+
+.top h1 {
+    font-weight: 900;
+    font-size: calc(30px + 1.5vw);
+    line-height: 1em;
+    text-align: center;
+    color: #13131e;
+}
+
+.top p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1em;
+    text-align: center;
+    color: #9f9ea2;
+}
+
+.body {
+    --gap: 10px;
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+    flex-wrap: wrap;
+
+    position: relative;
+}
+
+.cardParent {
+    flex-grow: 1;
+    width: calc((100% / 3) - var(--gap));
+    min-width: 300px;
+    min-height: 500px;
+}
+
+.topButton {
+    position: absolute;
+    color: #13131e;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    background: #95f017;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    transform: translateY(-50%);
+    z-index: 22;
+
+    display: grid;
+    place-content: center;
+}
+
+.topButton svg {
+    --dem: 40px;
+    width: var(--dem);
+    height: var(--dem);
+}

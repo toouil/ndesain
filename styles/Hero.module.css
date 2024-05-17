@@ -1,0 +1,135 @@
+.heroContainer {
+    width: 100%;
+    height: 100vh;
+    padding: 15px;
+}
+
+.hero {
+    width: 100%;
+    min-height: 100%;
+    border-radius: 30px;
+    background: url(https://res.cloudinary.com/dha2uo8vc/image/upload/v1715962797/ndesain/background/hero_vpf503.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 8vw 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10vh;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+  position: relative;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  overflow: hidden;
+  display: block;
+  height: 1em;
+  line-height: 1em;
+}
+
+.navButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    padding: 5px;
+    stroke: #fff;
+}
+
+.navButton svg {
+    width: 100%;
+}
+
+.heroBody p {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.heroBody h1 {
+    --font-size: calc(35px + 4vw);
+    color: #fff;
+    font-size: var(--font-size);
+    line-height: var(--font-size);
+    font-weight: 900;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer p {
+    width: 50%;
+    font-weight: 400;
+    font-size: 13px;
+    color: #fff;
+}
+
+.footer .explore {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    text-decoration: none;  
+    color: #fff;
+    transition: color .3s, background .3s;
+}
+
+.footer .explore:hover {
+    background: #fff;
+    color: #0d0f13;
+}
+
+.footer .explore::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    border: 1px solid #bbbbbb;
+    transform: translate(-50px, 20px);
+    transition: .3s;
+    pointer-events: none;
+}
+
+.footer .explore:hover::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* transform: translate(0, 0);
+    width: 100%;
+    height: 100%; */
+}
+
+.footer .explore .exploreInner {
+    display: flex !important;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        border-radius: 0;
+    }
+    .heroContainer {
+        padding: 0;
+    }
+}

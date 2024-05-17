@@ -1,0 +1,165 @@
+.venueContainer {
+    padding: 15px;
+}
+
+.venue {
+    position: relative;
+    width: 100%;
+    border-radius: 30px;
+    background: #0d0f13;
+    padding: 50px 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12vw;
+
+    overflow: hidden;
+}
+
+.venue::before {
+    content: "";
+    background: #2482c0;
+    width: 250px;
+    height: 150px;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: .4;
+}
+
+.top h1 {
+    font-weight: 600;
+    font-size: calc(30px + 1.5vw);
+    line-height: 1em;
+    text-align: center;
+    color: #f7f6f6;
+    padding: 0 50px;
+}
+
+.slides {
+    --pg: 8%;
+    display: flex;
+    justify-content: space-between;
+    gap: calc((var(--pg) / 2) - 25px);
+    padding-left: var(--pg);
+    padding-right: calc((var(--pg) / 2) - 25px);
+}
+
+.slidesBody {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.coverSlides {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2;
+}
+
+.coverSlides > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.8s;
+    background: #f7f6f665;
+
+    pointer-events: none;
+}
+
+.coverSlides > div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.8s ease-in-out;
+
+    filter: grayscale(.8);
+}
+
+.slidesButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.slidesButtons button {
+    color: #0d0f13;
+    background: #95f017;
+    border: none;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-content: center;
+
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+.slidesButtons button:disabled {
+    opacity: .3;
+    cursor: not-allowed;
+}
+
+
+
+.info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+.info > div {
+    width: 50%;
+}
+
+.info .infoLeft h1 {
+    font-size: 50px;
+    font-weight: 600;
+    color: #f3f4f5;
+}
+.info .infoRight h2 {
+    font-size: 25px;
+    color: #f3f4f5;
+    font-weight: 600;
+}
+.info .infoRight p {
+    font-size: 17px;
+    font-weight: 400;
+    color: #606064;
+}
+
+@media (max-width: 900px) {
+    .venueContainer {
+        padding: 0;
+    }
+    .venue {
+        border-radius: 0;
+    }
+    .slides {
+        padding: 0 15px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .slidesButtons {
+        flex-direction: row;
+    }
+    .info div.infoLeft {
+        display: none;
+    }
+    .info div.infoRight {
+        width: 100%;
+    }
+}
