@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import style from "@/styles/Contact.module.css";
 import Slider from "./UI/Slider";
+import gsap from "@/helpers/GSAP";
+import { useGSAP } from "@gsap/react";
 
 const slides = [
   "DESIGN",
@@ -38,6 +40,18 @@ export default function Contact() {
       {slide}
     </div>
   ));
+
+  useGSAP(() => {
+    gsap.from("." + style.contactContainer + " ." + style.topRightContact, {
+      x: 200,
+      scrollTrigger: {
+        trigger: "." + style.contactContainer,
+        start: "top bottom",
+        end: "top center",
+        scrub: true,
+      },
+    });
+  });
 
   return (
     <section className={style.contactContainer}>

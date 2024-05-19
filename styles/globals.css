@@ -15,11 +15,8 @@
   font-family: ClashDisplay;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 main#HOME {
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -122,8 +119,8 @@ main#HOME {
   --space: 10px;
   display: flex;
   gap: var(--space);
-  padding: calc(var(--space) / 2);
-  animation: 20s slide infinite linear;
+  padding: 0 calc(var(--space) / 2);
+  animation: 30s slide infinite linear;
 }
 
 @keyframes slide {

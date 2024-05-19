@@ -1,28 +1,13 @@
-import React, { useRef } from "react";
 import style from "@/styles/Footer.module.css";
 import Link from "next/link";
 import SplitStyle from "./UI/SplitStyle";
 import {
   EMAIL,
-  FACEBOOK,
-  INSTAGRAM,
-  LINKEDIN,
   PHONE,
-  TWITTER,
 } from "@/assets/icons";
+import { socialLinks } from "@/content";
 
 export default function Footer() {
-  const animateRef = useRef();
-  const play = () => animateRef.current.play();
-  const reverse = () => animateRef.current.reverse();
-
-  const linkes = [
-    { icon: FACEBOOK, link: "https://facebook.com" },
-    { icon: INSTAGRAM, link: "https://instagram.com" },
-    { icon: TWITTER, link: "https://twitter.com" },
-    { icon: LINKEDIN, link: "https://linkedin.com" },
-  ];
-
   return (
     <section className={style.footerContainer}>
       <div className={style.footerTop}>
@@ -30,10 +15,8 @@ export default function Footer() {
           <Link
             href="/"
             className={style.footerLink}
-            onMouseOver={play}
-            onMouseOut={reverse}
           >
-            <SplitStyle text="NDESAIN" animateRef={animateRef} />
+            <SplitStyle text="NDESAIN" />
           </Link>
         </nav>
         <div>
@@ -65,7 +48,7 @@ export default function Footer() {
           <p>@2022, All Rights Reserved</p>
         </div>
         <div>
-          {linkes.map((link) => (
+          {socialLinks.map((link) => (
             <Link href={link.link} key={link.link} className={style.socialLink}>
               <link.icon />
             </Link>

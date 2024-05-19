@@ -1,0 +1,58 @@
+.nav {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8vw;
+}
+
+.logo {
+  position: relative;
+  font-weight: 400;
+  color: #f7f6f6;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  height: 1em;
+  line-height: 1em;
+}
+
+.navButton, .navHiddenButton button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  stroke: #f7f6f6;
+
+  display: grid;
+  place-content: center;
+}
+
+.navButton svg, .navHiddenButton svg {
+  width: 30px;
+}
+
+.navHiddenButton button {
+    background: #0d0f13;
+    border: 1px solid #f7f6f6;
+    border-radius: 50%;
+}
+
+.navHiddenButton {
+    position: fixed;
+    top: 35px;
+    right: 8vw;
+    z-index: 999;
+    scale: 0;
+    border-radius: 50%;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    top: 0;
+  }
+}

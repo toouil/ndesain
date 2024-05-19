@@ -23,21 +23,18 @@ export default function Venue() {
     setCurrentIndex(getCurrentIndex);
   };
 
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ref.current,
-          start: "top bottom",
-          end: "top center",
-          scrub: true,
-        },
-      });
-
-      tl.from(reff.current, { scale: 0.5, y: 200 });
-    },
-    { scope: ref.current }
-  );
+  useGSAP(() => {
+    gsap.from(reff.current, {
+      scale: 0.5,
+      y: 200,
+      scrollTrigger: {
+        trigger: ref.current,
+        start: "top bottom",
+        end: "top center",
+        scrub: true,
+      },
+    });
+  });
 
   return (
     <section className={style.venueContainer} ref={ref}>

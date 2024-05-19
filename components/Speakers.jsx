@@ -5,8 +5,22 @@ import style from "@/styles/Speakers.module.css";
 import { LONG_ARROW, SHORT_ARROW } from "@/assets/icons";
 import Card from "./UI/Card";
 import { speakers } from "@/content";
+import gsap from "@/helpers/GSAP";
+import { useGSAP } from "@gsap/react";
 
 export default function Speakers() {
+  useGSAP(() => {
+    gsap.from("." + style.main, {
+      filter: "blur(10px)",
+      scrollTrigger: {
+        trigger: "." + style.main,
+        start: "top bottom",
+        end: "center center",
+        scrub: true,
+      },
+    });
+  });
+
   return (
     <section className={style.speakersContainer}>
       <div className={style.body}>

@@ -1,3 +1,5 @@
+import { FACEBOOK, INSTAGRAM, LINKEDIN, TWITTER } from "@/assets/icons";
+
 export const speakers = [
   {
     image: "https://res.cloudinary.com/dha2uo8vc/image/upload/v1715962799/ndesain/speakers/speaker_7_rwb7oi.jpg",
@@ -87,3 +89,11 @@ export const venues = [
     image: "https://res.cloudinary.com/dha2uo8vc/image/upload/v1715962799/ndesain/venues/the_book_nook_pvszw8.jpg",
   },
 ];
+
+export const socialLinks = [
+  { icon: FACEBOOK, slug: "Facebook", link: "https://facebook.com" },
+  { icon: INSTAGRAM, slug: "Instagram", link: "https://instagram.com" },
+  { icon: TWITTER, slug: "Twitter", link: "https://twitter.com" },
+  { icon: LINKEDIN, slug: "Linkedin", link: "https://linkedin.com" },
+]
+

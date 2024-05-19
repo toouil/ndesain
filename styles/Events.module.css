@@ -1,4 +1,5 @@
 .eventsContainer {
+    height: fit-content;
     padding: 0 15px;
 }
 

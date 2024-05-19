@@ -22,11 +22,11 @@ export default function Events() {
         scrollTrigger: {
           trigger: `.${style.top}`,
           start: "top bottom",
-          end: "bottom top",
+          end: "bottom center",
           scrub: true,
         },
       })
-      .fromTo(`.${style.top}`, { y: 50 }, { y: -50 });
+      .fromTo(`.${style.top}`, { y: 70 }, { y: -70 });
 
     gsap
       .timeline({
@@ -36,7 +36,7 @@ export default function Events() {
         },
       })
       .from(`.${style.cardParent}`, { opacity: 0, x: 200, stagger: 0.2 })
-      .from(`.${style.topButton}`, { opacity: 0, scale: 0.3 });
+      .from(`.${style.topButton}`, { opacity: 0, scale: 0.3 }, "<");
   });
 
   return (

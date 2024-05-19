@@ -1,0 +1,82 @@
+.header {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    /* background: #0d0f13; */
+    transform-origin: top;
+}
+
+.headerBackground {
+    background: #0d0f13;
+    transform-origin: top;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.navCloseContainer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 35px 8vw;
+}
+
+.navClose {
+    scale: 1;
+}
+
+.navCloseButton {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    color: #f7f6f6;
+  
+    display: grid;
+    place-content: center;
+    background: #0d0f13;
+    border: 1px solid #f7f6f6;
+    border-radius: 50%;
+}
+
+.navMenuContainer {
+    padding: 0 8vw;
+}
+
+.navMenuContainer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.navMenuContainer ul li .menuLink {
+    width: fit-content;
+    font-size: calc(30px + 3vw);
+    line-height: 1em;
+    height: 1em;
+    display: block;
+    color: #f7f6f6;
+    font-weight: 600;
+}
+
+.navMenuSocialContainer {
+    padding: 20px 8vw;
+}
+
+.navMenuSocialContainer ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navMenuSocialContainer ul li .socialLink {
+    display: block;
+    font-size: calc(10px + .5vw);
+    color: #818181;
+    text-decoration: none;
+}
+
+.navMenuSocialContainer ul li .socialLink:hover {
+    text-decoration: underline;
+}
+
+.navMenuContainer ul li {
+    overflow: hidden;
+}
